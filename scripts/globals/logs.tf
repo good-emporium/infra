@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "log_bucket" {
+resource "aws_s3_bucket" "logging_bucket" {
   bucket = "${module.init.logging_bucket}"
   acl    = "log-delivery-write"
 
