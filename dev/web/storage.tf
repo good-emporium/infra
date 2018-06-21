@@ -28,3 +28,12 @@ resource "aws_s3_bucket" "web_dev" {
     index_document = "index.html"
   }
 }
+
+resource "aws_s3_bucket" "web_staging" {
+  bucket = "good-emporium-web-staging"
+  acl    = "public-read"
+
+  website {
+    index_document = "index.html"
+  }
+}
