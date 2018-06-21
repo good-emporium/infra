@@ -9,6 +9,12 @@ resource "aws_s3_bucket" "terraform_state" {
     prevent_destroy = true
   }
 
+  // Comment me on first run
+  logging {
+    target_bucket = "good-emporium-logs"
+    target_prefix = "remote_state/"
+  }
+
   server_side_encryption_configuration {
     "rule" {
       "apply_server_side_encryption_by_default" {

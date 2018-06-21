@@ -4,7 +4,7 @@
 
 * It's assumed that your AWS credentials are stored locally. The simplest path forward there
 would be to install the AWS CLI tool and running `aws configure`.
-* Ensure that the [resources for the remote backend](remote-state) have been created. They have.
+* Ensure that the [resources for the remote backend](scripts/remote-state) have been created. They have.
 
 ## Notes
 
