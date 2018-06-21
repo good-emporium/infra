@@ -1,0 +1,7 @@
+crash.log
+*.iml
+*.tfstate
+*.tfstate.*
+
+.idea
+**/.terraform/*
