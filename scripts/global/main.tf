@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "good-emporium-terraform-state"
-    key    = "terraform/globals.tfstate"
+    key    = "terraform/global.tfstate"
     region = "us-east-2"
   }
 }
@@ -13,5 +13,5 @@ terraform {
 module "init" {
   source = "../../modules/init"
 
-  state_key = "globals"
+  state_key = "global"
 }

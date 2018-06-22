@@ -38,4 +38,8 @@ resource "aws_dynamodb_table" "terraform_state_lock" {
     name = "LockID"
     type = "S"
   }
+
+  server_side_encryption {
+    enabled = true
+  }
 }
