@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "web" {
   bucket = "${local.web_bucket_prefix}-${var.env}"
+  acl    = "public-read"
 
   policy = <<EOF
 {
