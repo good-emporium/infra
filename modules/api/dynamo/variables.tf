@@ -1,6 +1,4 @@
-locals {
-//  web_bucket_prefix = "good-emporium-web"
-}
-
+variable "capacity" {}
 variable "env" {}
-//variable "logging_bucket" {}
+variable "hash_key" {}
+variable "name" {}
