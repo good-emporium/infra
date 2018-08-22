@@ -21,7 +21,7 @@ module "api_users_dev" {
 
   capacity = 1
   env      = "d"
-  hash_key = "id"
+  hash_key = "username"
   name     = "users"
 }
 
@@ -30,6 +30,6 @@ module "api_users_prod" {
 
   capacity = 20
   env      = "p"
-  hash_key = "id"
+  hash_key = "username"
   name     = "users"
 }
