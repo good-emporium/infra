@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "web" {
-  bucket = "${local.web_bucket_prefix}-${var.env}"
+  bucket = "${var.bucket}"
   acl    = "public-read"
 
   policy = <<EOF
@@ -10,14 +10,14 @@ resource "aws_s3_bucket" "web" {
     "Effect":"Allow",
     "Principal": "*",
     "Action":["s3:GetObject"],
-    "Resource":["arn:aws:s3:::${local.web_bucket_prefix}-${var.env}/*"]
+    "Resource":["arn:aws:s3:::${var.bucket}/*"]
   }]
 }
 EOF
 
   logging {
     target_bucket = "${var.logging_bucket}"
-    target_prefix = "web_${var.env}/"
+    target_prefix = "${var.bucket}/"
   }
 
   website {
