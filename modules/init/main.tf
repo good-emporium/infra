@@ -7,3 +7,7 @@ data "terraform_remote_state" "remote_state" {
     region = "${local.region}"
   }
 }
+
+resource "aws_route53_zone" "ge" {
+  name = "goodemporium.com"
+}
