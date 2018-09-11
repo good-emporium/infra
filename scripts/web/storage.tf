@@ -41,3 +41,25 @@ EOF
     target_prefix = "${local.assets_bucket}/"
   }
 }
+
+resource "aws_s3_bucket" "root" {
+  bucket = "${local.root_bucket_prefix}"
+  acl    = "public-read"
+
+  policy = <<EOF
+{
+  "Version":"2012-10-17",
+  "Statement":[{
+    "Sid":"PublicReadForGetBucketObjects",
+    "Effect":"Allow",
+    "Principal": "*",
+    "Action":["s3:GetObject"],
+    "Resource":["arn:aws:s3:::${local.root_bucket_prefix}/*"]
+  }]
+}
+EOF
+
+  website {
+    redirect_all_requests_to = "https://${local.com_domain_www}"
+  }
+}
